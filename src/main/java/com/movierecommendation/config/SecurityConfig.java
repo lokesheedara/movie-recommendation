@@ -20,7 +20,7 @@ public class SecurityConfig {
         http
         .csrf(csrf -> csrf.disable())
         .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/auth/**").permitAll()
+        .requestMatchers("/auth/**","/api/movies/**").permitAll()
         .anyRequest().authenticated());
         return http.build();
     }

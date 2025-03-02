@@ -1,35 +1,30 @@
 package com.movierecommendation.models;
 
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
+@Table(name="movies")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "users")
 
-public class User {
-
+public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true,nullable=false)
-    private String email;
+
     @Column(nullable = false)
-    private String password;
+    private String title;
+    private String genre;
+    private int releaseYear;
+    private double rating;
+    private String description;
 
-
+    
 }
